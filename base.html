@@ -1,0 +1,98 @@
+{% load static %}
+
+<html lang='ja'>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>{% block title %}{% endblock %}</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+        <link href="{% static 'vendor/simple-line-icons/css/simple-line-icons.css' %}" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="{% static 'css/stylish-portfolio.css' %}" rel="stylesheet"> <!--背景画像-->
+
+        <!--MY style-->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/mystyle.css' %}">
+        {% block head %}{% endblock %}
+    </head>
+
+    <body>
+        <div id="wrapper">
+            <!-- Navigation -->
+            <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+                <div class="container">
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="navbar-brand" href="{% url 'weather:index' %}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="navbar-brand" href="{% url 'weather:weather_now' %}">Weather Now</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="navbar-brand" href="{% url 'weather:japan_map' %}">Weather Map</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="navbar-brand" href="{% url 'weather:forecasting' %}">Forecasting</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="navbar-brand" href="{% url 'weather:guide' %}">Guide</a>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav_item {% block active_inquiry %}{% endblock %}">
+                                <a class="navbar-brand" href="{% url 'weather:inquiry' %}">Inquiry</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            {% block header %}{% endblock %}
+
+            {% if messages %}
+                <div class="container">
+                    <div class="row">
+                        <div class="my-div-style w-100">
+                            <ul class="messages" style="list-style: none;">
+                                {% for message in messages %}
+                                <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+                                    {{ message }}
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+
+            {% block contents %}{% endblock %}
+
+            <footer class="footer text-center">
+                <div class="container">
+                    <ul class="list-inline mb-5">
+                        <a href="{% url 'weather:weather_now' %}" class="btn btn-primary btn-xl rounded-pill mt-5">Weather Now</a>
+                        <a href="{% url 'weather:japan_map' %}" class="btn btn-primary btn-xl rounded-pill mt-5">Weather Map</a>
+                        <a href="{% url 'weather:forecasting' %}" class="btn btn-primary btn-xl rounded-pill mt-5">Forecasting</a>
+                        <a href="{% url 'weather:guide' %}" class="btn btn-primary btn-xl rounded-pill mt-5">Guide</a>
+                        <a href="{% url 'weather:inquiry' %}" class="btn btn-primary btn-xl rounded-pill mt-5">Inquiry</a>
+                    </ul>
+                </div>
+            </footer>
+
+
+            <!-- Bootstrap core JavaScript -->
+            <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+            <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+        </div>
+    </body>
+</html>
