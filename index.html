@@ -1,24 +1,42 @@
 <!DOCTYPE html>
-{% extends 'base.html' %}
+<html>
+ <header class="masthead text-center text-black">
+  <div class="masthead-content">
+   <div class="container">
+    <!-- Bootstrap Core CSS -->
+    <link href="https://poteto0.github.io/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-{% load static %}
+    <!-- Custom Fonts -->
+    <link href="https://poteto0.github.io/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="{% static 'vendor/simple-line-icons/css/simple-line-icons.css' %}" rel="stylesheet">
 
-{% block title %}Profile{% endblock %}
+    <!-- Custom CSS -->
+    <link href="https://poteto0.github.io/css/stylish-portfolio.css" rel="stylesheet"> <!--背景画像-->
 
-{% block header %}
-<header class="masthead text-center text-black">
- <div class="masthead-content">
-  <div class="container">
-   <h1 class="masthead-heading mb-0">I'm Mahiro Fukuda</h1>
+    <!--MY style-->
+    <link rel="stylesheet" type="text/css" href="https://poteto0.github.io/css/css/mystyle.css">
+    
+    <h1 class="masthead-heading mb-0">I'm Mahiro Fukuda</h1>
+    
+   </div>
   </div>
- </div>
-</header>
-{% endblock %}
-{% block contents %}
+ </header>
 
-<body>
-  <a href="https://www.kaggle.com/mahirofukuda">kaggle</a>
-  <a href="https://note.com/jageimo_hatake/">note</a>
+ <body>
+   <a href="https://www.kaggle.com/mahirofukuda">kaggle</a>
+   <a href="https://note.com/jageimo_hatake/">note</a>
+   <footer class="footer text-center">
+    <div class="container">
+     <ul class="list-inline mb-5">
+      <a href="https://www.kaggle.com/mahirofukuda" class="btn btn-primary btn-xl rounded-pill mt-5">kaggle</a>
+      <a href="https://note.com/jageimo_hatake/">note</a>
+     </ul>
+    </div>
+   </footer>
+
+
+   <!-- Bootstrap core JavaScript -->
+   <script src="https://poteto0.github.io/bootstrap/js/bootstrap.bundle.min.js"></script>
  </body>
-
-{% endblock %}
+</html>
