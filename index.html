@@ -1,7 +1,12 @@
 <!DOCTYPE html>
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Weather Map & Forecasting{% endblock %}
+
+{% block header %}
 <html>
- <!-- Bootstrap Core CSS -->
- <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet"
  <header class="masthead text-center text-black">
   <div class="masthead-content">
    <div class="container">
@@ -17,3 +22,8 @@
   <div class="bg-circle-4 bg-circle"></div>
  </header>
 </html>
+
+{% endblock %}
+{% block contents %}
+
+{% endblock %}
