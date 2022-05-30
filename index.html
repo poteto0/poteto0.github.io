@@ -1,16 +1,24 @@
 <!DOCTYPE html>
-<html>
- <header class="masthead text-center text-black">
-  <!-- Bootstrap Core CSS -->
-  <link href="https://poteto0.github.io/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <div class="masthead-content">
-   <div class="container">
-    <h1 class="masthead-heading mb-0">I'm Mahiro Fukuda</h1>
-   </div>
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Profile{% endblock %}
+
+{% block header %}
+<header class="masthead text-center text-black">
+ <div class="masthead-content">
+  <div class="container">
+   <h1 class="masthead-heading mb-0">I'm Mahiro Fukuda</h1>
   </div>
- </header>
+ </div>
+</header>
  <body>
   <a href="https://www.kaggle.com/mahirofukuda">kaggle</a>
   <a href="https://note.com/jageimo_hatake/">note</a>
  </body>
 </html>
+{% endblock %}
+{% block contents %}
+
+{% endblock %}
