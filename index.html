@@ -1,8 +1,26 @@
-<!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm Mahiro Fukuda</p>
-  <a href="https://www.kaggle.com/mahirofukuda">kaggle</a>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Weather Map & Forecasting{% endblock %}
+
+{% block header %}
+
+<header class="masthead text-center text-black">
+ <div class="masthead-content">
+  <div class="container">
+   <h1 class="masthead-heading mb-0">I'm Mahiro Fukuda</h1>
+
+   <a href="https://www.kaggle.com/mahirofukuda">kaggle</a>
+  </div>
+ </div>
+
+ <div class="bg-circle-1 bg-circle"></div>
+ <div class="bg-circle-2 bg-circle"></div>
+ <div class="bg-circle-3 bg-circle"></div>
+ <div class="bg-circle-4 bg-circle"></div>
+</header>
+{% endblock %}
+{% block contents %}
+
+{% endblock %}
