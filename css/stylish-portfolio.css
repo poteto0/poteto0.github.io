@@ -354,7 +354,7 @@ a:hover, a:focus, a:active {
 }
 .icon2 {
     width: 300px;
-    height: 300px;
+    height: 00px;
     margin: 10px;
     object-fit: cover;
 }
